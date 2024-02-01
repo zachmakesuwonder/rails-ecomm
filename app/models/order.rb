@@ -14,4 +14,5 @@ class Order < ApplicationRecord
 
   scope :fulffiled, -> { where(fulffiled: true) }
   scope :not_fulffiled, -> { where(fulffiled: false) }
+  has_many :order_products
 end
