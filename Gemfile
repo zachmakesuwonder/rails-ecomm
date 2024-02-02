@@ -77,3 +77,9 @@ end
 gem "devise", "~> 4.9"
 
 gem "font-awesome-sass", "~> 6.5.1"
+
+gem "stripe", "~> 10.3"
+
+gem "pagy", "~> 6.2"
+
+gem "aws-sdk-s3", require: false

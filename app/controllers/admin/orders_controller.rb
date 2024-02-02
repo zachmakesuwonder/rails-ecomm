@@ -1,10 +1,10 @@
-class Admin::OrdersController < AdminController
+class Admin::OrdersController < AdminController 
   before_action :set_admin_order, only: %i[ show edit update destroy ]
 
   # GET /admin/orders or /admin/orders.json
   def index
-    @fulffiled_orders = Order.fulffiled.order(created_at: :asc)
-    @not_fulffiled_orders = Order.not_fulffiled.order(created_at: :asc)
+    @not_fulffiled_pagy, @not_fulffiled_orders = pagy(Order.where(fulffiled: false).order(created_at: :asc))
+    @fulffiled_pagy, @fulffiled_orders = pagy(Order.where(fulffiled: true).order(created_at: :asc), page_param: :page_fulffiled)
   end
 
   # GET /admin/orders/1 or /admin/orders/1.json
