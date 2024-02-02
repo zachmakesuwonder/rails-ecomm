@@ -1,12 +1,12 @@
 databases:
-  - name: ecomm
-    databaseName: ecomm
-    user: ecomm
+  - name: mysite
+    databaseName: mysite
+    user: mysite
     plan: free
 
 services:
   - type: web
-    name: ecomm
+    name: mysite
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
